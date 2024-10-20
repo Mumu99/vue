@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>问题不可能由导致这种问题的思维方式来解决</title>
+  </head>
+  <body>
+    <script type="module">
+      import Mustache from "./jslib/mustache.js";
+      console.log("Mustache.js version: " + Mustache.version);
+      const template = `
+        <ul>
+          {{#arr}}
+            <li>{{.}}</li>
+          {{/arr}}
+        </ul>
+      `;
+      const data = {
+        arr: ["apple", "banana", "orange"]
+      };
+      const html = Mustache.render(template, data);
+      document.body.innerHTML = html;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>问题不可能由导致这种问题的思维方式来解决</title>
+  </head>
+  <body>
+    <ul id="list">
+    </ul>
+    <script type="text/javascript">
+      const list = [
+        {
+          name: "张三",
+          age: 20,
+          sex: "男",
+        },
+        {
+          name: "李四",
+          age: 25,
+          sex: "女",
+        },
+        {
+          name: "王五",
+          age: 30,
+          sex: "男",
+        },
+      ];
+      const listDOM = document.getElementById("list");
+      for (let i = 0; i < list.length; i++) {
+        listDOM.innerHTML += [
+          "<li>",
+          '  <div class="hd">' + list[i].name + "的基本信息</div>",
+          '  <div class="bd">',
+          "    <p>姓名：" + list[i].name + "</p>",
+          "    <p>年龄：" + list[i].age + "</p>",
+          "    <p>性别：" + list[i].sex + "</p>",
+          "  </div>",
+          "</li>",
+        ].join("");
+      }
+    </script>
+  </body>
+</html>

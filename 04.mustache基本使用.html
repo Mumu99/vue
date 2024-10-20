@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>问题不可能由导致这种问题的思维方式来解决</title>
+  </head>
+  <body>
+    <script type="module">
+      import Mustache from "./jslib/mustache.js";
+      console.log("Mustache.js version: " + Mustache.version);
+      const template = `
+      <ul>
+        {{#list}}
+      <li>
+            <div>{{name}}的基本信息</div>
+            <div>
+              <p>姓名：{{name}}</p>
+              <p>年龄：{{age}}</p>
+              <p>性别：{{sex}}</p>
+            </div>
+          </li>
+          {{/list}}
+          </ul>
+    `;
+      const data = {
+        list: [
+          {
+            name: "张三",
+            age: 20,
+            sex: "男",
+          },
+          {
+            name: '里斯',
+            age: 25,
+            sex: "女",
+          },
+          {
+            name: "王五",
+            age: 30,
+            sex: "男",
+          },
+        ],
+      };
+      const html = Mustache.render(template, data);
+      document.body.innerHTML = html;
+    </script>
+  </body>
+</html>
